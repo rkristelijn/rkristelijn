@@ -37,6 +37,7 @@
   ],
   "flupke": {
     "org": "flupkejs",
+    "status": "experimental",
     "note": "Native drop-in replacements for popular dependencies (axios, lodash, moment, dotenv, uuid, qs, chalk, ms, ...) with lean ES2020+ implementations. One command via @flupkejs/cli."
   }
 }

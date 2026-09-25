@@ -97,23 +97,37 @@ def build_stats(data: dict) -> str:
             lines.append(f"| [`{p['npm']}`]({link}) | {fmt(dl)} | {star_cell} | {p['desc']} |")
         lines.append("")
 
-    # flupke family (discovered live)
+    # flupke family (discovered live) — experimental, kept out of the headline total
     flupke = flupke_packages(data)
     flupke_dl = sum(npm_downloads_last_month(p) for p in flupke)
-    total_dl += flupke_dl
     org = data["flupke"]["org"]
-    lines.append(f"### [`@{org}/*`](https://www.npmjs.com/org/{org}) — native drop-in replacements")
+    experimental = data["flupke"].get("status") == "experimental"
+    heading = f"### [`@{org}/*`](https://www.npmjs.com/org/{org}) — native drop-in replacements"
+    if experimental:
+        heading += " ⚠️ experimental"
+    lines.append(heading)
     lines.append("")
+    if experimental:
+        lines.append(
+            "> **Work in progress — not yet proved.** A vibe-coded exploration that still "
+            "needs validation (tests, benchmarks, API parity) before it's production-ready. "
+            "Numbers below are informational, not a maturity claim."
+        )
+        lines.append("")
     lines.append(
         f"A family of **{len(flupke)} packages** — {fmt(flupke_dl)} downloads/month combined. "
         + data["flupke"]["note"]
     )
     lines.append("")
 
+    proved_count = sum(len(g["packages"]) for g in data["groups"])
     header = (
         f"> **{fmt(total_dl)}** npm downloads/month across "
-        f"**{sum(len(g['packages']) for g in data['groups']) + len(flupke)}** published packages · "
+        f"**{proved_count}** published tools · "
         f"**★{total_stars}** on the tools below\n"
+        f">\n"
+        f"> _Plus an experimental [`@{org}/*`](https://www.npmjs.com/org/{org}) family "
+        f"({len(flupke)} packages) — work in progress, see below._\n"
     )
     return header + "\n" + "\n".join(lines)
 
