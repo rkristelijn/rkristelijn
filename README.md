@@ -87,12 +87,21 @@ A family of **166 packages** — 935 downloads/month combined. Native drop-in re
 
 ## 🤝 Open-source contributions
 
-I work in other people's codebases too, not just my own:
+**35+ merged PRs across 18 external projects** — I work in other people's
+codebases too, not just my own. A recurring theme: **accessibility (WCAG/a11y)** fixes.
 
-- **[marktext/marktext](https://github.com/marktext/marktext)** (a Markdown editor
-  with thousands of stars) — merged PRs incl. TOC active-heading highlighting,
-  a Dutch locale, pre-commit hooks, and an open PR for **foldable headings**
-  (closing a top-requested issue open since 2020).
+**Notable projects:**
+
+- **[metabase/metabase](https://github.com/metabase/metabase)** — a11y fixes (removed invalid `aria-expanded`, enabled zoom).
+- **[backstage/backstage](https://github.com/backstage/backstage)** — page theme colors fix.
+- **[strapi/documentation](https://github.com/strapi/documentation)** — docs fix.
+- **[marktext/marktext](https://github.com/marktext/marktext)** — TOC active-heading highlighting, Dutch locale, pre-commit hooks, and an open **foldable-headings** PR (a top request open since 2020).
+- **[ng-bootstrap/ng-bootstrap](https://github.com/ng-bootstrap/ng-bootstrap)** & **[angular-slider/ngx-slider](https://github.com/angular-slider/ngx-slider)** — a11y `aria-label` fixes.
+- **[willmendesneto/ngx-skeleton-loader](https://github.com/willmendesneto/ngx-skeleton-loader)** — WCAG 2.1 AA `aria-label`.
+- Plus security/vuln fixes and tooling across `learn-json-web-tokens`, `fullstack-typescript`, `console-log-json`, `editorconfig-cli`, and more.
+
+A11y and dependency-hygiene fixes to widely-used projects — small, focused,
+mergeable contributions that make real software better for more people.
 
 ## 🛠️ Stack
 
