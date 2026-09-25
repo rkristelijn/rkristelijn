@@ -98,6 +98,7 @@ codebases too, not just my own. A recurring theme: **accessibility (WCAG/a11y)**
 - **[marktext/marktext](https://github.com/marktext/marktext)** — TOC active-heading highlighting, Dutch locale, pre-commit hooks, and an open **foldable-headings** PR (a top request open since 2020).
 - **[ng-bootstrap/ng-bootstrap](https://github.com/ng-bootstrap/ng-bootstrap)** & **[angular-slider/ngx-slider](https://github.com/angular-slider/ngx-slider)** — a11y `aria-label` fixes.
 - **[willmendesneto/ngx-skeleton-loader](https://github.com/willmendesneto/ngx-skeleton-loader)** — WCAG 2.1 AA `aria-label`.
+- **[ROZ-nanobots](https://github.com/zanicool/ROZ-nanobots-for-your-pc-)** — a self-healing Linux health daemon. I mentor + contribute here (my son's project): added a macOS port, UPS health check, an SBOM/CVE monitoring module, and the full quality toolchain (CI, hooks, ruff, mypy, semgrep, gitleaks).
 - Plus security/vuln fixes and tooling across `learn-json-web-tokens`, `fullstack-typescript`, `console-log-json`, `editorconfig-cli`, and more.
 
 A11y and dependency-hygiene fixes to widely-used projects — small, focused,
