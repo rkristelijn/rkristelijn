@@ -122,9 +122,11 @@ def build_stats(data: dict) -> str:
 
     proved_count = sum(len(g["packages"]) for g in data["groups"])
     header = (
-        f"> **{fmt(total_dl)}** npm downloads/month across "
-        f"**{proved_count}** published tools · "
-        f"**★{total_stars}** on the tools below\n"
+        f"> **{fmt(total_dl)}** npm downloads/month across **{proved_count}** published tools · "
+        f"**★{total_stars}** stars\n"
+        f">\n"
+        f"> Trusted in production by teams using **strapi-health-plugin** (Kubernetes health "
+        f"checks for Strapi) and my **Next.js ESLint plugins** — the bulk of that traffic.\n"
         f">\n"
         f"> _Plus an experimental [`@{org}/*`](https://www.npmjs.com/org/{org}) family "
         f"({len(flupke)} packages) — work in progress, see below._\n"
