@@ -69,7 +69,7 @@ Everything below is on npm — `npx` or `npm i` and go.
 
 > **Work in progress — not yet proved.** A vibe-coded exploration that still needs validation (tests, benchmarks, API parity) before it's production-ready. Numbers below are informational, not a maturity claim.
 
-A family of **166 packages** — 935 downloads/month combined. Native drop-in replacements for popular dependencies (axios, lodash, moment, dotenv, uuid, qs, chalk, ms, ...) with lean ES2020+ implementations. One command via @flupkejs/cli.
+A family of **166 packages** — 891 downloads/month combined. Native drop-in replacements for popular dependencies (axios, lodash, moment, dotenv, uuid, qs, chalk, ms, ...) with lean ES2020+ implementations. One command via @flupkejs/cli.
 
 <!-- STATS:END -->
 
