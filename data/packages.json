@@ -1,0 +1,42 @@
+{
+  "groups": [
+    {
+      "title": "CLI & TUI",
+      "packages": [
+        { "npm": "glab-tui", "repo": "glab-tui", "desc": "k9s-style Terminal UI for GitLab CI" },
+        { "npm": "@rkristelijn/lcode", "repo": "lcode", "desc": "Search your git repos and open in VS Code" },
+        { "npm": "@rkristelijn/todomd", "repo": "todomd", "desc": "Simple tools for a simple TODO.md" },
+        { "npm": "dungly", "repo": "dungly", "desc": "Find English proverbs from Dutch keywords" },
+        { "npm": "cli-kt", "repo": "cli-keyboard-trainer", "desc": "CLI keyboard trainer" },
+        { "npm": "automater", "repo": "automater", "desc": "Scaffold modern web apps with best-practice defaults" },
+        { "npm": "create-prettierrc", "repo": "create-prettierrc", "desc": "Generate a default .prettierrc" }
+      ]
+    },
+    {
+      "title": "DevSecOps / CI tooling",
+      "packages": [
+        { "npm": "npm-audit-plus-plus", "repo": "npm-audit-plus-plus", "desc": "Convert `npm audit` output to XML for GitLab pipelines" },
+        { "npm": "npm-outdated-junit", "repo": "npm-outdated-junit", "desc": "Convert `npm outdated` to JUnit XML for CI" }
+      ]
+    },
+    {
+      "title": "ESLint plugins",
+      "packages": [
+        { "npm": "eslint-plugin-nextjs-enforce-use-client", "repo": "eslint-plugin-nextjs-enforce-use-client", "desc": "Enforce `use client` in Next.js" },
+        { "npm": "eslint-plugin-nextjs-enforce-runtime-edge", "repo": "eslint-plugin-nextjs-enforce-runtime-edge", "desc": "Enforce edge runtime for Cloudflare" },
+        { "npm": "@rkristelijn/eslint-plugin-mui", "repo": "eslint-plugin-mui", "desc": "Extended custom ESLint rules for MUI" }
+      ]
+    },
+    {
+      "title": "Plugins & examples",
+      "packages": [
+        { "npm": "strapi-health-plugin", "repo": "strapi-health-plugin", "desc": "Kubernetes health checks for Strapi" },
+        { "npm": "login-express-session", "repo": "login", "desc": "Server-rendered login/logout/session example" }
+      ]
+    }
+  ],
+  "flupke": {
+    "org": "flupkejs",
+    "note": "Native drop-in replacements for popular dependencies (axios, lodash, moment, dotenv, uuid, qs, chalk, ms, ...) with lean ES2020+ implementations. One command via @flupkejs/cli."
+  }
+}
