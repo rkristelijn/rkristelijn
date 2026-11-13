@@ -77,9 +77,12 @@ A family of **166 packages** — 1,585 downloads/month combined. Native drop-in 
 
 - **[cpm](https://github.com/rkristelijn/cpm)** — a C++ code-quality engine
   (format / lint / test / SAST gate). This is where the "sustainable fix" idea
-  becomes a tool teams can run.
-- **keur** *(sneak preview — not yet public)* — deterministic security guardrails
-  for AI-generated code, with a self-improving rule loop trained against a
+  becomes a tool teams can run. _Superseded by keur (below), which takes the
+  same idea further._
+- **[keur](https://github.com/rkristelijn/keur)** — deterministic guardrails for
+  AI-generated code: an anti-slop, vibe-code limiter that runs as a git
+  pre-commit/pre-push hook. A native C++ RE2 rule engine plus a policy engine
+  (PASS / WARN / BLOCK), with a self-improving rule loop trained against a
   proven-tool baseline. The next step beyond cpm.
 - **[glab-tui](https://github.com/rkristelijn/glab-tui)** — k9s for GitLab, in Go.
 - **the `@flupkejs/*` experiment** — vibe-coded native drop-in replacements; a
