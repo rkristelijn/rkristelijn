@@ -1,9 +1,10 @@
 # keur config — rkristelijn/rkristelijn (public GitHub profile repo)
 #
 # This is a PUBLIC profile README. It is supposed to contain the handle
-# "rkristelijn" everywhere (LinkedIn, npm packages, GitHub links). The
-# VAULT-PERSONAL rule exists to keep personal identifiers out of WORK/vault
-# repos; it does not apply to a repo whose whole purpose is the public identity.
-# Disabled here (reviewable, in git) rather than suppressed per-commit.
+# "rkristelijn" everywhere (LinkedIn, npm packages, GitHub links), and it
+# references the public "@flupkejs/*" npm org. The vault/BII rules exist to keep
+# personal/business identifiers out of WORK/vault repos; they do not apply to a
+# repo whose whole purpose is the public identity. Disabled here (reviewable, in
+# git) rather than suppressed per-commit.
 [rules]
-disabled = ["VAULT-PERSONAL"]
+disabled = ["VAULT-PERSONAL", "BII-DENYLIST-001"]

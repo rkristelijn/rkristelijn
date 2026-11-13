@@ -53,6 +53,37 @@ def github_stars(repo: str) -> int | None:
         return None
 
 
+def external_contributions() -> tuple[int, int] | None:
+    """(merged_pr_count, distinct_external_repo_count) for PRs authored by
+    rkristelijn in repos that are NOT rkristelijn's own. Returns None on failure
+    so the README keeps its previous hand-set numbers rather than regressing."""
+    headers = {"Accept": "application/vnd.github+json"}
+    tok = os.environ.get("GITHUB_TOKEN")
+    if tok:
+        headers["Authorization"] = f"Bearer {tok}"
+    q = "type:pr author:rkristelijn is:merged -user:rkristelijn"
+    try:
+        base = "https://api.github.com/search/issues"
+        enc = urllib.parse.urlencode({"q": q, "per_page": 100})
+        repos: set[str] = set()
+        total = 0
+        # one page of 100 is plenty; paginate defensively up to 3 pages.
+        for page in range(1, 4):
+            data = get_json(f"{base}?{enc}&page={page}", headers)
+            total = int(data.get("total_count", total))
+            items = data.get("items", [])
+            for it in items:
+                url = it.get("repository_url", "")
+                repos.add(url.replace("https://api.github.com/repos/", ""))
+            if len(items) < 100:
+                break
+        if total == 0:
+            return None
+        return total, len(repos)
+    except Exception:
+        return None
+
+
 def npm_badge(pkg: str) -> str:
     enc = urllib.parse.quote(pkg, safe="")
     link = "https://www.npmjs.com/package/" + urllib.parse.quote(pkg, safe="@/")
@@ -121,12 +152,22 @@ def build_stats(data: dict) -> str:
     lines.append("")
 
     proved_count = sum(len(g["packages"]) for g in data["groups"])
+    contrib = external_contributions()
+    contrib_line = ""
+    if contrib:
+        prs, repos = contrib
+        contrib_line = (
+            f">\n"
+            f"> **{prs} merged PRs** across **{repos} external open-source projects** "
+            f"(backstage, metabase, mui/toolpad, strapi, ng-bootstrap, marktext, ...).\n"
+        )
     header = (
         f"> **{fmt(total_dl)}** npm downloads/month across **{proved_count}** published tools · "
         f"**★{total_stars}** stars\n"
         f">\n"
         f"> Trusted in production by teams using **strapi-health-plugin** (Kubernetes health "
         f"checks for Strapi) and my **Next.js ESLint plugins** — the bulk of that traffic.\n"
+        f"{contrib_line}"
         f">\n"
         f"> _Plus an experimental [`@{org}/*`](https://www.npmjs.com/org/{org}) family "
         f"({len(flupke)} packages) — work in progress, see below._\n"
